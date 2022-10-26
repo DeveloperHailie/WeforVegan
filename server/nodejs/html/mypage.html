@@ -1,0 +1,19 @@
+<html>
+    <head>
+        마이페이지
+    </head>
+    <body>
+        <h1>마이페이지</h1>
+        <form action='/mypage' method='post'>
+            usr_id, usr_pw, usr_name, usr_sex, usr_birth, usr_vegantype
+            <p><input type='text' name="id" placeholder="id"/></p>
+            <p><input type='password' name="pwd" placeholder="pwd"/></p>
+            <p><input type='text' name='name' placeholder="이름"></p>
+            <p><input type='text' name='sex' placeholder="여자"></p>
+            <p><input type='text' name='birth' placeholder="10대"></p>
+            <p><input type='text' name='vegantype' placeholder="비건,락토,오보,락토오보"></p>
+            <p><input type='submit'/></p>
+        </form>
+        <a href="/login">login하러 가기</a>
+    </body>
+</html>

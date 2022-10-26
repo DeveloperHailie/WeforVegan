@@ -1,0 +1,30 @@
+* 바코드 찍으면 나올 제품 정보 DB => barcode 
+pt_idx, pt_name, pt_rawmtr, pt_barcode, pt_imgurl, reg_date
+
+*원성분 집합 db => rawset
+인덱스, 원성분집합, 먹을수없는비건타입
+rs_idx, rs_set, rs_cannoteattype
+-------------------------------------------------------------------------
+* 회원 DB  _ 클라이언트에게 이메일 빼달라고 하기 => user
+인덱스, ID, PW, 이름, 성별, 생일, 비건타입, 좋아요인덱스, 문의하기인덱스
+usr_idx, usr_id, usr_pw, usr_name, usr_sex, usr_birth, usr_vegantype, usr_likeidx, qna_idx
+
+* 문의하기 기능 하는 db 따로 만들어? => qna
+인덱스, ID, 문의내용, 메일
+qna_idx, usr_id, qna_content, qna_mail
+
+_ user db, qna db 1:n, user가1, qna가 n, 비식별
+-------------------------------------------------------------------------
+* 레시피 DB => recipe
+인덱스, 레시피명
+rp_idx, rp_name, rp_source
+
+* sns레시피 DB => SNS, 만개의레시피 => snsrecipe
+인덱스, 출처, URL, 사진URL, 제목(레시피명)
+rp_idx, rp_source, rp_name, sns_url, sns_imgurl
+
+* 식품의약품안전처 DB => 근데 api 통해 받아온 레시피는 받아온 내용(열량, 식단종류, ...)이 조금 달라서 따로 만듦 => apirecipe
+rp_idx, rp_source, rp_name, api_category, api_howtocook, api_carbohydrate, api_protein, api_fat, api_hashtag, api_imgurlsmall, api_imgurlbig, api_recipe, api_ingredient => rp_source는 우리가 추가한 거
+
+_ recipe-snsrecipe, recipe-apirecipe 1:n (n이 0이상), 식별관계 
+-------------------------------------------------------------------------

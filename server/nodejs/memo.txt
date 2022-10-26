@@ -1,0 +1,9 @@
+# 돌아가는 곳 
+C:\Users\hailie\Desktop\git\WeforVegan_server\server\test
+
+#테스트용 페이지
+메인 : http://localhost:3000/
+단순 화면 전환_추후 마이페이지로 전환 예정 : http://localhost:3000/user
+단순 파일 출력_분리한 라우터에서 파일 읽어오기 : http://localhost:3000/file
+
+
